@@ -54,6 +54,7 @@ WORKDIR /opt/splunk
 
 # Configurations folder, var folder for everything (indexes, logs, kvstore)
 #VOLUME [ "/opt/splunk/etc", "/opt/splunk/var" ]
+RUN mkdir -p /opt/splunk/etc && mkdir -p /opt/splunk/var
 
 ENTRYPOINT ["/sbin/entrypoint.sh"]
 CMD ["start-service"]
